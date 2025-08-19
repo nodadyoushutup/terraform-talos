@@ -1,0 +1,2 @@
+# terraform-talos
+Talos configuration
