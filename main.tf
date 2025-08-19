@@ -60,7 +60,9 @@ resource "talos_cluster_kubeconfig" "this" {
   node                 = [for k, v in var.node_data.controlplanes : k][0]
 }
 
-output "kubeconfig" {
-  value = talos_cluster_kubeconfig.this.client_configuration
-  sensitive = true
+resource "local_sensitive_file" "kubeconfig" {
+  filename = pathexpand("${path.module}/.kubeconfig")
+  content = talos_cluster_kubeconfig.this.kubeconfig_raw
+  file_permission = "0600"
+  directory_permission = "0700"
 }
