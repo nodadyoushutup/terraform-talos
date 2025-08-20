@@ -61,7 +61,7 @@ resource "talos_cluster_kubeconfig" "this" {
 }
 
 resource "local_sensitive_file" "kubeconfig" {
-  filename = pathexpand("${path.module}/.kubeconfig")
+  filename = pathexpand("~/.kube/config")
   content = talos_cluster_kubeconfig.this.kubeconfig_raw
   file_permission = "0600"
   directory_permission = "0700"

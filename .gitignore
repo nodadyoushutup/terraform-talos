@@ -8,12 +8,13 @@
 # lock files
 *.terraform.lock.hcl
 
-# kubeconfig
-*.kubeconfig
-
 # secret
 .secret/
 .secret
+
+# kubeconfig
+.kube/
+.kube
 
 # Crash log files
 crash.log
