@@ -1,3 +1,3 @@
 #!/bin/bash
 
-terraform apply -var-file=.tfvars --auto-approve
+terraform apply -var-file="$HOME/.tfvars/talos.tfvars" --auto-approve
