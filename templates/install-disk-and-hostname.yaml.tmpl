@@ -1,5 +1,7 @@
 machine:
   install:
     disk: ${install_disk}
+    extensions:
+      - image: ghcr.io/siderolabs/iscsi-tools:v0.2.0
   network:
     hostname: ${hostname}
